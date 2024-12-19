@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Validasi</title>
+    <style>
+        .error {
+            color: red;
+            display: none;
+        }
+        .error-border {
+            border-color: red;
+        }
+        .form-group {
+            display: flex;
+            align-items: center; 
+            margin-bottom: 10px; 
+        }
+        .form-group label {
+            width: 200px; 
+            margin-right: 10px; 
+        }
+    </style>
+</head>
+<body>
+    <h1>Pemesanan Tiket</h1>
+    <form id="ticketForm">
+        <div class="form-group">
+            <label for="nama">Nama:</label>
+            <input type="text" id="nama" maxlength="30" required>
+            <span class="error" id="namaError">Nama harus diisi dan maksimal 30 karakter.</span>
+        </div>
+        <div class="form-group">
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+            <span class="error" id="emailError">Email tidak valid.</span>
+        </div>
+        <div class="form-group">
+            <label for="jam">Jam Keberangkatan:</label>
+            <input type="text" id="jam" placeholder="00.00 - 23.59" required>
+            <span class="error" id="jamError">Jam harus dalam format HH.MM (00.00 - 23.59).</span>
+        </div>
+        <div class="form-group">
+            <label for="tujuan">Tujuan Keberangkatan:</label>
+            <input type="text" id="tujuan" required>
+            <span class="error" id="tujuanError">Tujuan harus diisi.</span>
+        </div>
+        <div class="form-group">
+            <label for="jumlah">Jumlah Tiket:</label>
+            <input type="number" id="jumlah" min="1" max="10" required>
+            <span class="error" id="jumlahError">Jumlah tiket harus antara 1 dan 10.</span>
+        </div>
+
+        <button type="submit">Submit</button>
+    </form>
+
+    <div id="result"></div>
+
+    <script>
+        function validateForm(event) {
+            event.preventDefault(); 
+
+            var nama = document.getElementById("nama").value;
+            var email = document.getElementById("email").value;
+            var jam = document.getElementById("jam").value;
+            var tujuan = document.getElementById("tujuan").value;
+            var jumlah = document.getElementById("jumlah").value;
+
+            
+            var resultDiv = document.getElementById("result");
+            resultDiv.innerHTML = `<h2>Hasil Pemesanan:</h2>
+                                   <p>Nama: ${nama}</p>
+                                   <p>Email: ${email}</p>
+                                   <p>Jam Keberangkatan: ${jam}</p>
+                                   <p>Tujuan: ${tujuan}</p>
+                                   <p>Jumlah Tiket: ${jumlah}</p>`;
+        }
+
+        document.getElementById('ticketForm').addEventListener('submit', validateForm);
+    </script>
+</body>
+</html>
