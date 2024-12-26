@@ -1,0 +1,67 @@
+<!DOCTYPE html>  
+<html lang="id">  
+<head>  
+    <meta charset="UTF-8">  
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">  
+    <title>Pemesanan Kamar Hotel</title>  
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">  
+</head>  
+<body>  
+
+<div class="container my-5">  
+    <h2 class="mb-4">HILTON RESERVATION</h2>  
+    <form>  
+        <div class="form-group">  
+            <label for="fullName">Full Name:</label>  
+            <input type="text" class="form-control" id="fullName" name="fullName" placeholder="Enter Full Name" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="email">Email:</label>  
+            <input type="email" class="form-control" id="email" name="email" placeholder="Enter Email" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="phoneNumber">Phone Number:</label>  
+            <input type="tel" class="form-control" id="phoneNumber" name="phoneNumber" placeholder="Enter Number Phone" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="checkInDate">Check-in Date:</label>  
+            <input type="date" class="form-control" id="checkInDate" name="checkInDate" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="checkOutDate">Check-Out Date:</label>  
+            <input type="date" class="form-control" id="checkOutDate" name="checkOutDate" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="roomType">Room Type:</label>  
+            <select class="form-control" id="roomType" name="roomType" required>  
+                <option value="" disabled selected>Choose Your Room Type</option>  
+                <option value="standar">Standard</option>  
+                <option value="deluxe">Deluxe</option>  
+                <option value="suite">Suite</option>  
+            </select>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="numberOfGuests">Number Of Guests:</label>  
+            <input type="number" class="form-control" id="numberOfGuests" name="numberOfGuests" min="1" max="10" placeholder="Enter Number Of guests" required>  
+        </div>  
+
+        <div class="form-group">  
+            <label for="specialRequests">Special Request:</label>  
+            <textarea class="form-control" id="specialRequests" name="specialRequests" rows="3" placeholder="Enter Any Special Request (If Any)"></textarea>  
+        </div>  
+
+        <button type="submit" class="btn btn-primary">BOOK ROOM</button>  
+    </form>  
+</div>  
+
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>  
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>  
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>  
+</body>  
+</html>
